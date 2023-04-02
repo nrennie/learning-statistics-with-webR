@@ -3,7 +3,7 @@ title: "Introduction to Statistics"
 author: "Nicola Rennie"
 format:
   html:
-    self-contained: false
+    embed-resources: true
     toc: true
     toc-depth: 1
     df-print: kable
