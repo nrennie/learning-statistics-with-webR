@@ -1,0 +1,10 @@
+title: Lancaster University Presentation Template
+author: Nicola Rennie
+version: 0.0.1
+contributes:
+  formats: 
+    revealjs:
+      logo: logo.jpg
+      theme: LUslides.scss
+      title-slide-attributes:
+        data-background-color: "#b4b7b8"
