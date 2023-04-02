@@ -1,0 +1,165 @@
+---
+title: "Introduction to Statistics"
+author: "Nicola Rennie"
+format:
+  html:
+    self-contained: false
+    toc: true
+    toc-depth: 1
+    df-print: kable
+    logo: ""
+    theme: LUslides.scss
+  LUslides-revealjs:
+    width: 1600
+    height: 900
+    df-print: kable
+    logo: ""
+    toc: true
+    toc-depth: 2
+filters:
+  - webr
+---
+
+## What is statistics?
+
+```{r}
+#| label: setup
+#| echo: false
+#| eval: true
+#| message: false
+library(tidyverse)
+library(emojifont)
+library(showtext)
+library(reactable)
+library(kableExtra)
+font_add_google("Roboto", "roboto")
+font_add_google("Roboto Slab", "slab")
+showtext_auto()
+set.seed(1234)
+population_df = tibble(ID = 1:200, 
+                       x = rep(1:20, times = 10),
+                       y = rep(1:10, each = 20),
+                       Value = rnorm(200, 250, 50))
+sample_size = 10
+sample_ids = sample(1:200, size = sample_size, replace = FALSE)
+sample_df =  filter(population_df, ID %in% sample_ids)
+```
+
+# Descriptive statistics {background-color="#b4b7b8"}
+
+Descriptive statistics provide a summary that quantitatively describes a sample of data.
+
+## Population
+
+**Population** refers to the entire group of individuals that we want to draw conclusions about. 
+
+```{r}
+#| label: pop-people
+#| eval: true
+#| echo: false
+#| fig-align: center
+#| fig-height: 4.16
+ggplot() +
+  geom_text(data = population_df,
+            mapping = aes(x = x,
+                          y = y,
+                          label = fontawesome('fa-user'),
+                          colour = Value),
+            family='fontawesome-webfont', size = 20) +
+  scale_colour_gradient(low = "#d88687", high = "#7c090b") +
+  labs(title = "Population: 200 people") +
+  theme_void() +
+  theme(legend.position = "none", 
+        legend.title = element_blank(),
+        plot.margin = margin(10, 10, 10, 10), 
+        plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  family = "roboto",
+                                  size = 36,
+                                  margin = margin(b = 10)))
+
+```
+
+## Sample
+
+**Sample** refers to the (usually smaller) group of people for which we have collected data on.
+
+```{r}
+#| label: samp-people
+#| eval: true
+#| echo: false
+#| fig-align: center
+#| fig-height: 4.16
+ggplot() +
+  geom_text(data = population_df,
+            mapping = aes(x = x,
+                          y = y,
+                          label = fontawesome('fa-user')),
+            family='fontawesome-webfont', size = 20, colour = "grey") +
+  geom_text(data = sample_df,
+            mapping = aes(x = x,
+                          y = y,
+                          label = fontawesome('fa-user'),
+                          colour = Value),
+            family='fontawesome-webfont', size = 20) +
+  scale_colour_gradient(low = "#d88687", high = "#7c090b") +
+  labs(title = glue::glue("Sample: {sample_size} people")) +
+  theme_void() +
+  theme(legend.position = "none", 
+        legend.title = element_blank(),
+        plot.margin = margin(10, 10, 10, 10), 
+        plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  family = "roboto",
+                                  size = 36,
+                                  margin = margin(b = 10)))
+
+```
+
+## Generate sample data
+
+For the examples later, let's create a population of data and draw a sample from it in R:
+
+```{webr}
+# Generate population data
+set.seed(1234)
+population = rnorm(200, 250, 50)
+
+# Pick a sample
+sample_size = 10
+sample_data = sample(population, size = sample_size, replace = FALSE)
+```
+
+## Sample mean
+
+The mean, often simply called the *average*, is defined as *the sum of all values divided by the number of values*. It's a measure of central tendency that tells us what's happening near the middle of the data.
+
+::::{style='text-align: center;'}
+
+$\bar{x} = \frac{1}{n} \sum_{i=i}^{n} x_{i}$
+
+::::
+
+In R, we use the `mean()` function:
+
+```{webr}
+# Calculate mean
+mean(sample_data)
+```
+
+## Sample standard deviation
+
+The standard deviation tells us about how spread out the data is. A lower standard deviation indicates that values tend to be close to the mean, and a higher standard deviation indicates that the values are spread out over a wider range.
+
+::::{style='text-align: center;'}
+
+$s = \sqrt{\frac{\Sigma_{i= 1}^{N} (x_i - \bar{x})^2}{n-1}}$
+
+::::
+
+In R, we use the `sd()` function:
+
+```{webr}
+# Calculate standard deviation
+sd(sample_data)
+```
