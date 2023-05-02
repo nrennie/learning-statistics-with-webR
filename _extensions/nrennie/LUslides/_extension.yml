@@ -4,7 +4,9 @@ version: 0.0.1
 contributes:
   formats: 
     revealjs:
-      logo: logo.jpg
+      logo: LUlogo.png
       theme: LUslides.scss
+      height: 900
+      width: 1600
       title-slide-attributes:
-        data-background-color: "#b4b7b8"
+        data-background-color: "#D9DBDB"

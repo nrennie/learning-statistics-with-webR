@@ -23,7 +23,7 @@ $presentation-heading-color: #000000 !default;
 $code-color: #b20e10 !default;
 $code-block-font-size: 0.6em;
 $code-block-border-color: #000000;
-$code-block-bg: #D9DBDB;
+$code-block-bg: #e6e7e7;
 
 // bg colours 
 $body-color: #000000;
@@ -32,10 +32,18 @@ $body-bg: #ffffff;
 
 /*-- scss:rules --*/
 
+.reveal .slides {
+  padding: 30px;
+  width: 80% !important;
+}
+
 .subtitle {
-  color: $body-bg;
-  font-size: $presentation-h2-font-size;
+  font-size: $presentation-h3-font-size;
   font-family: $font-family-sans-serif;
+}
+
+h2 {
+  padding-bottom: 35px;
 }
 
 .author {
@@ -55,7 +63,7 @@ section.has-dark-background a, section.has-dark-background a:hover {
 }
 
 .reveal .footer {
-  color: #5b868d;
+  color: #b4b7b8;
   font-family: $font-family-sans-serif;
   padding-bottom: 25px;
 }
@@ -65,12 +73,13 @@ section.has-dark-background a, section.has-dark-background a:hover {
   padding-right: 20px !important;
   padding-bottom: 30px !important;
   max-height: 60px !important;
+  z-index: 1;
 }
 
 .reveal .slide-menu-button {
-    left: 100px;
-    top: 30px;
-    padding-left: 20px;
+    left: 5px;
+    top: 15px;
+    padding-left: 10px;
     color: #b4b7b8;
   }
 
@@ -78,4 +87,8 @@ section.has-dark-background a, section.has-dark-background a:hover {
   background: rgba(0, 0, 0, 0.2);
   color: #b20e10;
   height: 2%;
+}
+
+.right {
+  text-align: right !important
 }
