@@ -2,18 +2,17 @@
 title: "Introduction to Statistics"
 author: "Nicola Rennie"
 format:
-  html:
-    embed-resources: true
-    toc: true
-    toc-depth: 1
-    df-print: kable
+  LUslides-revealjs:
+    disable-layout: true
+    margin-right: "20"
     logo: ""
-    theme: LUslides.scss
 filters:
   - webr
 ---
 
-## What is statistics?
+# Descriptive statistics {background-color="#D9DBDB"}
+
+Descriptive statistics provide a summary that quantitatively describes a sample of data.
 
 ```{r}
 #| label: setup
@@ -37,10 +36,6 @@ sample_size = 10
 sample_ids = sample(1:200, size = sample_size, replace = FALSE)
 sample_df =  filter(population_df, ID %in% sample_ids)
 ```
-
-# Descriptive statistics {background-color="#b4b7b8"}
-
-Descriptive statistics provide a summary that quantitatively describes a sample of data.
 
 ## Population
 
@@ -109,18 +104,28 @@ ggplot() +
 
 ```
 
-## Generate sample data
+## Generate sample data {.scrollable}
 
-For the examples later, let's create a population of data and draw a sample from it in R:
+For the examples later, let's create a population of data in R...:
 
 ```{webr-r}
 # Generate population data
 set.seed(1234)
 population = rnorm(200, 250, 50)
+print("Population generated!")
+```
 
+## Generate sample data {.scrollable}
+
+... and draw a sample from it:
+
+```{webr-r}
 # Pick a sample
+set.seed(1234)
 sample_size = 10
-sample_data = sample(population, size = sample_size, replace = FALSE)
+sample_data = sample(population,
+                     size = sample_size,
+                     replace = FALSE)
 print("You've created a sample of data!")
 ```
 
@@ -133,6 +138,8 @@ The mean, often simply called the *average*, is defined as *the sum of all value
 $\bar{x} = \frac{1}{n} \sum_{i=i}^{n} x_{i}$
 
 ::::
+
+## Sample mean
 
 In R, we use the `mean()` function:
 
@@ -150,6 +157,8 @@ The standard deviation tells us about how spread out the data is. A lower standa
 $s = \sqrt{\frac{\Sigma_{i= 1}^{N} (x_i - \bar{x})^2}{n-1}}$
 
 ::::
+
+## Sample standard deviation
 
 In R, we use the `sd()` function:
 
