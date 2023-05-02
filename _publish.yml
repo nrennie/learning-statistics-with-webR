@@ -1,4 +1,4 @@
 - source: learning-statistics-with-webR.qmd
-  quarto-pub:
-    - id: a7e52a3e-e93d-4189-8010-354fa135863f
-      url: 'https://quartopub.com/sites/nrennie/learning-statistics-with-webr'
+  netlify:
+    - id: 98b59541-ebc3-468c-ae99-0693e2456baa
+      url: 'https://golden-choux-7088c4.netlify.app'
