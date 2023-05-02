@@ -1,4 +1,4 @@
 - source: learning-statistics-with-webR.qmd
   netlify:
     - id: 98b59541-ebc3-468c-ae99-0693e2456baa
-      url: 'https://golden-choux-7088c4.netlify.app'
+      url: 'https://learning-statistics-with-webr.netlify.app'
