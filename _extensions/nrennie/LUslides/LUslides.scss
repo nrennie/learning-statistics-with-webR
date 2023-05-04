@@ -37,6 +37,10 @@ $body-bg: #ffffff;
   width: 80% !important;
 }
 
+.reveal pre {
+  visibility: visible !important;
+}
+
 .subtitle {
   font-size: $presentation-h3-font-size;
   font-family: $font-family-sans-serif;
