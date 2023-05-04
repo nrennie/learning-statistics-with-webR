@@ -1,8 +1,4 @@
-- source: learning-statistics-with-webR.qmd
-  netlify:
-    - id: 98b59541-ebc3-468c-ae99-0693e2456baa
-      url: 'https://learning-statistics-with-webr.netlify.app'
 - source: index.qmd
   netlify:
     - id: 7565f373-6bb8-46af-9869-048b5c127921
-      url: 'https://guileless-sprinkles-177bf3.netlify.app'
+      url: 'https://learning-statistics-with-webr.netlify.app'
