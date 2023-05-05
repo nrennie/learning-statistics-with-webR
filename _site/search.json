@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html#population",
+    "href": "index.html#population",
+    "title": "Introduction to Statistics",
+    "section": "Population",
+    "text": "Population\nPopulation refers to the entire group of individuals that we want to draw conclusions about."
+  },
+  {
+    "objectID": "index.html#sample",
+    "href": "index.html#sample",
+    "title": "Introduction to Statistics",
+    "section": "Sample",
+    "text": "Sample\nSample refers to the (usually smaller) group of people for which we have collected data on."
+  },
+  {
+    "objectID": "index.html#generate-sample-data",
+    "href": "index.html#generate-sample-data",
+    "title": "Introduction to Statistics",
+    "section": "Generate sample data",
+    "text": "Generate sample data\nFor the examples later, let’s create a population of data in R…:\nLoading webR..."
+  },
+  {
+    "objectID": "index.html#generate-sample-data-1",
+    "href": "index.html#generate-sample-data-1",
+    "title": "Introduction to Statistics",
+    "section": "Generate sample data",
+    "text": "Generate sample data\n… and draw a sample from it:\nLoading webR..."
+  },
+  {
+    "objectID": "index.html#sample-mean",
+    "href": "index.html#sample-mean",
+    "title": "Introduction to Statistics",
+    "section": "Sample mean",
+    "text": "Sample mean\nThe mean, often simply called the average, is defined as the sum of all values divided by the number of values. It’s a measure of central tendency that tells us what’s happening near the middle of the data.\n\n\\(\\bar{x} = \\frac{1}{n} \\sum_{i=i}^{n} x_{i}\\)"
+  },
+  {
+    "objectID": "index.html#sample-mean-1",
+    "href": "index.html#sample-mean-1",
+    "title": "Introduction to Statistics",
+    "section": "Sample mean",
+    "text": "Sample mean\nIn R, we use the mean() function:\nLoading webR..."
+  },
+  {
+    "objectID": "index.html#sample-standard-deviation",
+    "href": "index.html#sample-standard-deviation",
+    "title": "Introduction to Statistics",
+    "section": "Sample standard deviation",
+    "text": "Sample standard deviation\nThe standard deviation tells us about how spread out the data is. A lower standard deviation indicates that values tend to be close to the mean, and a higher standard deviation indicates that the values are spread out over a wider range.\n\n\\(s = \\sqrt{\\frac{\\Sigma_{i= 1}^{N} (x_i - \\bar{x})^2}{n-1}}\\)"
+  },
+  {
+    "objectID": "index.html#sample-standard-deviation-1",
+    "href": "index.html#sample-standard-deviation-1",
+    "title": "Introduction to Statistics",
+    "section": "Sample standard deviation",
+    "text": "Sample standard deviation\nIn R, we use the sd() function:\nLoading webR..."
+  }
+]

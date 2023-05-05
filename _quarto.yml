@@ -1,2 +1,7 @@
 project:
-  title: "learning-statistics-with-webR"
+  type: website
+
+website:
+  title: "Learning statistics with webR"
+      
+format: html

@@ -1,3 +1,3 @@
-# Learning Statistics with webR
+# Learning statistics with webR
 
-Quarto HTML document to teach introductory statistics concepts using webR. Note that this project is currently a work-in-progress.
+Quarto revealjs slides to teach introductory statistics concepts using webR. Note that this project is currently a work-in-progress.

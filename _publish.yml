@@ -1,4 +1,0 @@
-- source: index.qmd
-  netlify:
-    - id: 7565f373-6bb8-46af-9869-048b5c127921
-      url: 'https://learning-statistics-with-webr.netlify.app'
