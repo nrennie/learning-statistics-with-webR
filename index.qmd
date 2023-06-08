@@ -2,17 +2,19 @@
 title: "Introduction to Statistics"
 author: "Nicola Rennie"
 format:
-  LUslides-revealjs:
+  revealjs:
+    theme: [lux, custom.scss]
     disable-layout: true
     margin-right: "20"
-    logo: ""
+    height: 900
+    width: 1600
 execute: 
   echo: true
 filters:
   - webr
 ---
 
-# Descriptive statistics {background-color="#D9DBDB"}
+# Descriptive statistics {background-color="#1A936F"}
 
 Descriptive statistics provide a summary that quantitatively describes a sample of data.
 
@@ -26,8 +28,7 @@ library(emojifont)
 library(showtext)
 library(reactable)
 library(kableExtra)
-font_add_google("Roboto", "roboto")
-font_add_google("Roboto Slab", "slab")
+font_add_google("Ubuntu", "Ubuntu")
 showtext_auto()
 set.seed(1234)
 population_df = tibble(ID = 1:200, 
@@ -56,7 +57,7 @@ ggplot() +
                           label = fontawesome('fa-user'),
                           colour = Value),
             family='fontawesome-webfont', size = 20) +
-  scale_colour_gradient(low = "#d88687", high = "#7c090b") +
+  scale_colour_gradient(low = "#baded3", high = "#12664d") +
   labs(title = "Population: 200 people") +
   theme_void() +
   theme(legend.position = "none", 
@@ -64,7 +65,7 @@ ggplot() +
         plot.margin = margin(10, 10, 10, 10), 
         plot.title = element_text(face = "bold",
                                   hjust = 0.5,
-                                  family = "roboto",
+                                  family = "Ubuntu",
                                   size = 36,
                                   margin = margin(b = 10)))
 
@@ -92,7 +93,7 @@ ggplot() +
                           label = fontawesome('fa-user'),
                           colour = Value),
             family='fontawesome-webfont', size = 20) +
-  scale_colour_gradient(low = "#d88687", high = "#7c090b") +
+  scale_colour_gradient(low = "#baded3", high = "#12664d") +
   labs(title = glue::glue("Sample: {sample_size} people")) +
   theme_void() +
   theme(legend.position = "none", 
@@ -100,7 +101,7 @@ ggplot() +
         plot.margin = margin(10, 10, 10, 10), 
         plot.title = element_text(face = "bold",
                                   hjust = 0.5,
-                                  family = "roboto",
+                                  family = "Ubuntu",
                                   size = 36,
                                   margin = margin(b = 10)))
 
