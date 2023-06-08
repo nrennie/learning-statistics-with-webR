@@ -3,7 +3,7 @@ title: "Introduction to Statistics"
 author: "Nicola Rennie"
 format:
   revealjs:
-    theme: [lux, custom.scss]
+    theme: custom.scss
     disable-layout: true
     margin-right: "20"
     height: 900
