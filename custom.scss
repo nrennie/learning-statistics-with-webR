@@ -1,0 +1,25 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// font family
+$font-family-sans-serif: 'Ubuntu', Arial, sans-serif !default;
+
+// colours
+$code-block-bg: #fafafa;
+$link-color: #1A936F;
+
+/*-- scss:rules --*/
+
+.btn-webr {
+  background-color: $code-block-bg !important;
+  border-color: $link-color;
+  border-width: 3px;
+  border-radius: 15px !important;
+  padding: 10px;
+  font-family: $font-family-sans-serif;
+  margin-bottom: 10px;
+  font-size: 20px;
+  cursor:pointer;
+}
