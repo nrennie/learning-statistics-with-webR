@@ -3,15 +3,14 @@ title: "Introduction to Statistics"
 author: "Nicola Rennie"
 format:
   revealjs:
-    theme: custom.scss
-    disable-layout: true
-    margin-right: "20"
-    height: 900
-    width: 1600
-execute: 
-  echo: true
+    resources:
+    - webr-serviceworker.js
+    - webr-worker.js
+webr:
+  channel-type: "automatic"
+  packages: ['ggplot2', 'dplyr']
 filters:
-  - webr
+- webr
 ---
 
 # Descriptive statistics {background-color="#1A936F"}
