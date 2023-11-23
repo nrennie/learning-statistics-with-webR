@@ -1,13 +1,8 @@
 ---
 title: "Introduction to Statistics"
 author: "Nicola Rennie"
-format:
-  revealjs:
-    resources:
-    - webr-serviceworker.js
-    - webr-worker.js
+format: revealjs
 webr:
-  channel-type: "automatic"
   packages: ['ggplot2', 'dplyr']
 filters:
 - webr
