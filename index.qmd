@@ -1,7 +1,9 @@
 ---
 title: "Introduction to Statistics"
 author: "Nicola Rennie"
-format: revealjs
+format:
+  revealjs:
+    theme: [default, custom.scss]
 webr:
   packages: ['ggplot2', 'dplyr']
 filters:
@@ -28,7 +30,7 @@ set.seed(1234)
 population_df = tibble(ID = 1:200, 
                        x = rep(1:20, times = 10),
                        y = rep(1:10, each = 20),
-                       Value = rnorm(200, 250, 50))
+                       Value = rpois(200, 250))
 sample_size = 10
 sample_ids = sample(1:200, size = sample_size, replace = FALSE)
 sample_df =  filter(population_df, ID %in% sample_ids)
@@ -108,7 +110,7 @@ For the examples later, let's create a population of data in R...:
 ```{webr-r}
 # Generate population data
 set.seed(1234)
-population = rnorm(200, 250, 50)
+population = rpois(200, 250)
 print("Population generated!")
 ```
 
@@ -120,13 +122,21 @@ print("Population generated!")
 # Pick a sample
 set.seed(1234)
 sample_size = 10
-sample_data = sample(population,
-                     size = sample_size,
-                     replace = FALSE)
+sample_data = sample(population, size = sample_size, replace = FALSE)
 print("You've created a sample of data!")
 ```
 
-## Sample mean
+::: {.fragment}
+
+What do the values look like?
+
+```{webr-r}
+sample_data
+```
+
+:::
+
+## Mean
 
 The mean, often simply called the *average*, is defined as *the sum of all values divided by the number of values*. It's a measure of central tendency that tells us what's happening near the middle of the data.
 
@@ -136,7 +146,7 @@ $\bar{x} = \frac{1}{n} \sum_{i=i}^{n} x_{i}$
 
 ::::
 
-## Sample mean
+::: {.fragment}
 
 In R, we use the `mean()` function:
 
@@ -145,9 +155,84 @@ In R, we use the `mean()` function:
 mean(sample_data)
 ```
 
+:::
+
+## Median
+
+The median of a dataset is the middle value when the data is arranged in ascending order, or the average of the two middle values if the dataset has an even number of observations.
+
+::: {.fragment}
+
+In R, we use the `median()` function:
+
+```{webr-r}
+# Calculate median
+median(sample_data)
+```
+
+:::
+
+## Mode
+
+The mode statistic represents the value that appears most frequently in a dataset.
+
+::: {.fragment}
+
+In R, there is no `mode()` function. Instead, we count how many of each value there are and choose the one with the highest number:
+
+```{webr-r}
+# Count, sort and extract first element
+names(sort(table(sample_data), decreasing = TRUE)[1])
+```
+
+:::
+
+## Range
+
+The range is the difference between the maximum and minimum values in a dataset.
+
+::: {.fragment}
+
+In R, we can use the `max()` and `min()` function and subtract the values:
+
+```{webr-r}
+# Subtract max and min values
+max(sample_data) - min(sample_data)
+```
+
+Note that the `range()` function returns the minimum and maximum, not a single value:
+
+```{webr-r}
+# Calculate range
+range(sample_data)
+```
+
+:::
+
+## Sample variance
+
+The sample variance tells us about how spread out the data is. A lower variance indicates that values tend to be close to the mean, and a higher variance indicates that the values are spread out over a wider range.
+
+::::{style='text-align: center;'}
+
+$s^2 = \frac{\Sigma_{i= 1}^{N} (x_i - \bar{x})^2}{n-1}$
+
+::::
+
+::: {.fragment}
+
+In R, we use the `var()` function:
+
+```{webr-r}
+# Calculate variance
+var(sample_data)
+```
+
+:::
+
 ## Sample standard deviation
 
-The standard deviation tells us about how spread out the data is. A lower standard deviation indicates that values tend to be close to the mean, and a higher standard deviation indicates that the values are spread out over a wider range.
+The sample standard deviation is the square root of the variance. It also tells us about how spread out the data is. 
 
 ::::{style='text-align: center;'}
 
@@ -155,7 +240,7 @@ $s = \sqrt{\frac{\Sigma_{i= 1}^{N} (x_i - \bar{x})^2}{n-1}}$
 
 ::::
 
-## Sample standard deviation
+::: {.fragment}
 
 In R, we use the `sd()` function:
 
@@ -163,3 +248,43 @@ In R, we use the `sd()` function:
 # Calculate standard deviation
 sd(sample_data)
 ```
+
+:::
+
+## Descriptive statistics
+
+Descriptive statistics provide a summary that quantitatively describes a sample of data.
+
+* Mean: The sum of the values divided by the number of values.
+* Median: The middle value of the data when it's sorted.
+* Mode: The value that appears most frequently.
+* Range: The difference between the maximum and minimum values.
+* Variance: The average of the squared differences from the mean.
+* Standard deviation: The square root of the variance.
+
+## Exercise
+
+In R:
+
+* Load the `ames` housing data set using `data(ames, package = "modeldata")`
+* Calculate the mean, median, mode, range, variance, and standard deviation of house prices (the `Sale_Price` column).
+
+> Remember: you can extract a column in R using `dataset$column_name`.
+
+## Exercise solutions
+
+```{r}
+#| echo: true
+# load data
+data(ames, package = "modeldata")
+
+# summary statistics
+mean(ames$Sale_Price)
+median(ames$Sale_Price)
+names(sort(table(ames$Sale_Price), decreasing = TRUE)[1])
+max(ames$Sale_Price) - min(ames$Sale_Price)
+var(ames$Sale_Price)
+sd(ames$Sale_Price)
+```
+
+# Questions? {background-color="#1A936F"}
