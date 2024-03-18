@@ -5,10 +5,12 @@
 
 // font family
 $font-family-sans-serif: 'Ubuntu', Arial, sans-serif !default;
+$presentation-font-size-root: 36px;
 
 // colours
 $code-block-bg: #fafafa;
 $link-color: #1A936F;
+$code-color: #1A936F !default;
 
 /*-- scss:rules --*/
 
@@ -28,6 +30,20 @@ $link-color: #1A936F;
   padding: 30px;
   width: 80% !important;
 }
+
+.reveal .slide-menu-button {
+    left: 5px;
+    top: 15px;
+    padding-left: 10px;
+    color: #baded3;
+  }
+
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #1A936F;
+  height: 2%;
+}
+
 
 h1 {
   padding-bottom: 30px;
