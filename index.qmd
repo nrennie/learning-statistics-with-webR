@@ -3,7 +3,8 @@ title: "Introduction to Statistics"
 author: "Nicola Rennie"
 format:
   revealjs:
-    theme: [default, custom.scss]
+    theme: [custom.scss]
+    auto-stretch: false
 webr:
   packages: ['ggplot2', 'dplyr']
 filters:
