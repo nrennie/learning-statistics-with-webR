@@ -5,8 +5,6 @@ format:
   revealjs:
     theme: [custom.scss]
     auto-stretch: false
-webr:
-  packages: ['ggplot2', 'dplyr']
 filters:
 - webr
 ---
