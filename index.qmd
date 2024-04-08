@@ -252,7 +252,7 @@ sd(sample_data)
 
 :::
 
-## Descriptive statistics
+## Descriptive statistics {.smaller}
 
 Descriptive statistics provide a summary that quantitatively describes a sample of data.
 
